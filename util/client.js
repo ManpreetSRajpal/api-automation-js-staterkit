@@ -5,13 +5,12 @@ var commonHeaders = {
     'Accept': 'application/json',
 };
 
-exports.GET = async ({endpoint, baseUrl = "http://localhost:3000/", headers = commonHeaders}) => {
+exports.GET = async ({endpoint, baseUrl = "http://localhost:3000/", headers}) => {
 
-    if (headers != undefined) {
-        headers = {...commonHeaders, ...headers};
-    } else {
-        headers = commonHeaders;
-    }
+
+    headers=headers!=undefined
+        ? {...commonHeaders, ...headers}
+        : commonHeaders;
 
     try {
         let response = await supertest(baseUrl).get(endpoint)
