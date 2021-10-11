@@ -5,7 +5,7 @@ let baseUrl = endpoints.baseUrl;
 let postsUrl = endpoints.postsEndpoint;
 let commentsUrl = endpoints.commentsEndpoint;
 
-const PostPage = {
+const PostsPage = {
 
     async getMePost(id) {
         let res = await client.GET({
@@ -25,4 +25,4 @@ const PostPage = {
     }
 };
 
-export default  PostPage;
+export default  PostsPage;
