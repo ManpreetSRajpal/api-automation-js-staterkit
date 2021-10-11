@@ -7,6 +7,13 @@ var commonHeaders = {
 
 exports.GET = async ({endpoint, baseUrl = "http://localhost:3000/", headers = commonHeaders}) => {
 
+    if (headers!=undefined){
+        headers={...commonHeaders,...headers};
+    }
+    else {
+        headers=commonHeaders;
+    }
+
     try {
         let response = await supertest(baseUrl).get(endpoint)
             .set(commonHeaders)
