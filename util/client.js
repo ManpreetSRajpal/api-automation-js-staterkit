@@ -8,7 +8,7 @@ var commonHeaders = {
 exports.GET = async ({endpoint, baseUrl = "http://localhost:3000/", headers}) => {
 
 
-    headers=headers!=undefined
+    headers = headers != undefined
         ? {...commonHeaders, ...headers}
         : commonHeaders;
 
@@ -21,7 +21,7 @@ exports.GET = async ({endpoint, baseUrl = "http://localhost:3000/", headers}) =>
     }
 };
 
-exports.POST = async (endpoint, requestBody,baseUrl="default url") => {
+exports.POST = async (endpoint, requestBody, baseUrl = "default url") => {
     try {
         let response = await supertest(baseUrl).post(endpoint)
             .set('Accept', 'application/json')
