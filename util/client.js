@@ -1,11 +1,16 @@
 import supertest from "supertest";
 
-exports.GET = async ({endpoint, baseUrl = "http://localhost:3000/"}) => {
+var commonHeaders = {
+    'authorization': 'TokenValueASDF',
+    'Accept': 'application/json',
+};
+
+exports.GET = async ({endpoint, baseUrl = "http://localhost:3000/", headers = commonHeaders}) => {
 
     try {
         let response = await supertest(baseUrl).get(endpoint)
-            .set('Accept', 'application/json')
-            .set('Content-Type', 'application/json');
+            .set(commonHeaders)
+            .set(headers);
         return response;
     } catch (error) {
         console.log('Error in GET request - ', error);

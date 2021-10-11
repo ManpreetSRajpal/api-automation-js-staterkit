@@ -8,14 +8,19 @@ let commentsUrl = endpoints.commentsEndpoint;
 const PostsPage = {
 
     async getMePost(id) {
+
+        var moreHeaders = {'Content-Type': 'application/json'};
+
         let res = await client.GET({
             baseUrl: baseUrl,
-            endpoint: postsUrl + id
+            endpoint: postsUrl + id,
+            headers: moreHeaders
         });
         return res;
     },
 
     async getMeComments() {
+
         let beforeResp = await this.getMePost(1);
         let id = beforeResp.body.id;
         let res = await client.GET({
@@ -25,4 +30,4 @@ const PostsPage = {
     }
 };
 
-export default  PostsPage;
+export default PostsPage;
