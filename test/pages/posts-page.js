@@ -1,5 +1,5 @@
-const client = require("../../util/client");
-const endpoints = require("../../util/endpoints");
+const client = require("util/client");
+const endpoints = require("util/endpoints");
 
 let baseUrl = endpoints.baseUrl;
 let postsUrl = endpoints.postsEndpoint;
