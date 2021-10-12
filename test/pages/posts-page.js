@@ -1,5 +1,6 @@
 const client = require("util/client");
 const endpoints = require("util/endpoints");
+import json from "../../util/jsonHelper";
 
 let baseUrl = endpoints.baseUrl;
 let postsUrl = endpoints.postsEndpoint;
@@ -13,7 +14,7 @@ const PostsPage = {
 
         let res = await client.GET({
             baseUrl: baseUrl,
-            endpoint: postsUrl + id,
+            endpoint: postsUrl,
             headers: moreHeaders
         });
         return res;
@@ -22,7 +23,7 @@ const PostsPage = {
     async getMeComments() {
 
         let beforeResp = await this.getMePost(1);
-        let id = beforeResp.body.id;
+        let id = json.getValue(beforeResp.body, 'id');
         let res = await client.GET({
             endpoint: commentsUrl + id
         });

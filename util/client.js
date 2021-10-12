@@ -21,11 +21,15 @@ exports.GET = async ({endpoint, baseUrl = "http://localhost:3000/", headers}) =>
     }
 };
 
-exports.POST = async (endpoint, requestBody, baseUrl = "default url") => {
+exports.POST = async ({endpoint, requestBody, baseUrl = "default url",headers}) => {
+
+    headers = headers != undefined
+        ? {...commonHeaders, ...headers}
+        : commonHeaders;
+
     try {
         let response = await supertest(baseUrl).post(endpoint)
-            .set('Accept', 'application/json')
-            .set('Content-Type', 'application/json')
+            .set(headers)
             .send(requestBody);
         return response;
     } catch (error) {
