@@ -7,12 +7,12 @@ let postsUrl = endpoints.postsEndpoint;
 let commentsUrl = endpoints.commentsEndpoint;
 
 const PostsPage = {
+    ...client,
 
     async getMePost(id) {
 
         var moreHeaders = {'Content-Type': 'application/json'};
-
-        let res = await client.GET({
+        let res = await this.GET({
             baseUrl: baseUrl,
             endpoint: postsUrl,
             headers: moreHeaders
@@ -24,7 +24,7 @@ const PostsPage = {
 
         let beforeResp = await this.getMePost(1);
         let id = json.getValue(beforeResp.body, 'id');
-        let res = await client.GET({
+        let res = await this.GET({
             endpoint: commentsUrl + id
         });
         return res;

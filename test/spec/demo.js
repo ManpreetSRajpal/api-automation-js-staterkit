@@ -1,4 +1,4 @@
-import PostsPage from "../pages/posts-page";
+import PostsPage from "../pages/posts.page";
 import should from "should";
 
 describe('Demo api suite', function () {
