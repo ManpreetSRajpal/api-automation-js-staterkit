@@ -9,7 +9,7 @@
     "prettier:check": "prettier --check '**/*.js'",
     "prettier:write": "prettier --write '**/*.js'",
     "validate": "eslint '**/*.js'",
-    "clean": "rm -rf logs/*.log mochawesome-report/* node_modules/* package-lock.json"
+    "clean": "rm -rf logs/*.log mochawesome-report/* node_modules/* package-lock.json .idea"
   },
   "keywords": [],
   "author": "Manpreet",

@@ -2,3 +2,4 @@ node_modules/
 mochawesome-report/
 logs/
 package-lock.json
+.idea
