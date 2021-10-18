@@ -7,6 +7,12 @@
 
 npm test
 
+**Prettier**
+Check: npm run prettier:check
+Write: npm run prettier:write
+
+
+
 **Known issue:**
 
 Path resolver in _.babelrc_ is not working for _alias pages_.
