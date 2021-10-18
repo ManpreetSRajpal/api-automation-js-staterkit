@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "description": "JS Api automation starter kit",
   "scripts": {
-    "pretest": "rm -rf logs/*.log && rm -rf allure-results/*",
+    "pretest": "rm -rf logs/*.log && rm -rf mochawesome-report/*",
     "test": "mocha --config './.mocharc.js'",
     "start-server": "json-server --watch server/req.json",
     "prettier:check": "prettier --check '**/*.js'",
-    "prettier:write": "prettier --write '**/*.js'"
+    "prettier:write": "prettier --write '**/*.js'",
+    "clean": "rm -rf logs/*.log mochawesome-report/* node_modules/* package-lock.json"
   },
   "keywords": [],
   "author": "Manpreet",

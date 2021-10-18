@@ -5,7 +5,8 @@
 
 **To run test:** 
 
-npm test
+1. npm install 
+2. npm test
 
 **Prettier**
 - Check: npm run prettier:check
