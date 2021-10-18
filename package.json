@@ -8,6 +8,7 @@
     "start-server": "json-server --watch server/req.json",
     "prettier:check": "prettier --check '**/*.js'",
     "prettier:write": "prettier --write '**/*.js'",
+    "validate": "eslint '**/*.js'",
     "clean": "rm -rf logs/*.log mochawesome-report/* node_modules/* package-lock.json"
   },
   "keywords": [],
@@ -32,6 +33,7 @@
     "babel-plugin-module-resolver": "^4.1.0",
     "chai": "^4.3.4",
     "chai-json-schema": "^1.5.1",
+    "eslint": "^8.0.1",
     "husky": "^7.0.2",
     "lint-staged": "^11.2.3",
     "prettier": "^2.4.1",

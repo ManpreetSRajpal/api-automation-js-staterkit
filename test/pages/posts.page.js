@@ -8,7 +8,7 @@ const commentsUrl = postPageEndpoints.commentsEndpoint;
 const PostsPage = {
 	...client,
 
-	async getMePost(id) {
+	async getMePost() {
 		logger.info(' Getting Posts');
 		const moreHeaders = { 'Content-Type': 'application/json' };
 		const res = this.GET({
