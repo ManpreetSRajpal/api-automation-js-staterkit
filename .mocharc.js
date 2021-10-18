@@ -5,7 +5,7 @@ module.exports = {
             'js'
         ],
     package: './package.json',
-    reporter: 'spec',
+    reporter: 'mochawesome',
     timeout: 5000,
     require:
         [

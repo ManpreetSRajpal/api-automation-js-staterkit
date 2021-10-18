@@ -1,3 +1,6 @@
-exports.postsEndpoint = 'posts/';
-exports.commentsEndpoint = 'comments/';
-exports.profilesEndpoint = 'profile/';
+export const postPageEndpoints = {
+    postsEndpoint:          'posts/',
+    commentsEndpoint:       'comments/',
+    profilesEndpoint:       'profile/'
+}
+

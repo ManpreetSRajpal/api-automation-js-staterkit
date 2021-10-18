@@ -1,9 +1,9 @@
 import client from "util/client";
-import endpoints from "./endpoints.js";
+import {postPageEndpoints} from "./endpoints.js";
 import json from "util/jsonHelper";
 
-const postsUrl = endpoints.postsEndpoint;
-const commentsUrl = endpoints.commentsEndpoint;
+const postsUrl = postPageEndpoints.postsEndpoint;
+const commentsUrl = postPageEndpoints.commentsEndpoint;
 
 const PostsPage = {
     ...client,
