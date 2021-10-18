@@ -5,7 +5,9 @@
   "scripts": {
     "pretest": "rm -rf logs/*.log && rm -rf allure-results/*",
     "test": "mocha --config './.mocharc.js'",
-    "start-server": "json-server --watch server/req.json"
+    "start-server": "json-server --watch server/req.json",
+    "prettier:check": "prettier --check '**/*.js'",
+    "prettier:write": "prettier --write '**/*.js'"
   },
   "keywords": [],
   "author": "Manpreet",
@@ -26,17 +28,12 @@
     "@babel/plugin-transform-runtime": "^7.15.8",
     "@babel/preset-env": "^7.15.8",
     "@babel/register": "^7.15.3",
-    "apidoc": "^0.50.0",
     "babel-plugin-module-resolver": "^4.1.0",
     "chai": "^4.3.4",
     "chai-json-schema": "^1.5.1",
+    "husky": "^7.0.2",
+    "lint-staged": "^11.2.3",
+    "prettier": "^2.4.1",
     "winston": "^3.3.3"
-  },
-  "apidoc": {
-    "name": "Api documentation",
-    "version": "0.1.0",
-    "description": "Generate beautiful api documentation",
-    "title": "API Documentation",
-    "url": "http://localhost:3000"
   }
 }
