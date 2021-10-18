@@ -1,7 +1,7 @@
 **To start json-server:**
 
 - npm run start-server
-- To validate run GET http://localhost:3000/posts from postman
+- To validate if server started successfully, run GET http://localhost:3000/posts from postman
 
 **To run test:** 
 
@@ -11,6 +11,9 @@
 **Prettier**
 - Check: npm run prettier:check
 - Write: npm run prettier:write
+
+**Eslint**
+- npm run validate
 
 **To setup husky pre commit hooks**
 - npx husky install
