@@ -8,10 +8,14 @@
 npm test
 
 **Prettier**
-Check: npm run prettier:check
-Write: npm run prettier:write
+- Check: npm run prettier:check
+- Write: npm run prettier:write
 
+**Setting up husky pre commit hooks**
+- npx husky install
+- npx husky add .husky/pre-commit "npx --no-install lint-staged"
 
+Make sure node version >=12.13.0
 
 **Known issue:**
 
