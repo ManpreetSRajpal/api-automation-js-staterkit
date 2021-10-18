@@ -11,7 +11,7 @@ npm test
 - Check: npm run prettier:check
 - Write: npm run prettier:write
 
-**Setting up husky pre commit hooks**
+**To setup husky pre commit hooks**
 - npx husky install
 - npx husky add .husky/pre-commit "npx --no-install lint-staged"
 
