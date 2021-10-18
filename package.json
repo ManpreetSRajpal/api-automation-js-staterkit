@@ -1,14 +1,14 @@
 {
   "name": "ApiTests",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "JS Api automation starter kit",
   "scripts": {
-    "test": "mocha --require @babel/register 'test/spec/*.js' --reporter mochawesome",
+    "pretest": "rm -rf logs/*.log && rm -rf allure-results/*",
+    "test": "mocha --config './.mocharc.js'",
     "start-server": "json-server --watch server/req.json"
   },
   "keywords": [],
-  "author": "",
+  "author": "Manpreet",
   "license": "ISC",
   "type": "module",
   "dependencies": {
@@ -26,6 +26,17 @@
     "@babel/plugin-transform-runtime": "^7.15.8",
     "@babel/preset-env": "^7.15.8",
     "@babel/register": "^7.15.3",
-    "babel-plugin-module-resolver": "^4.1.0"
+    "apidoc": "^0.50.0",
+    "babel-plugin-module-resolver": "^4.1.0",
+    "chai": "^4.3.4",
+    "chai-json-schema": "^1.5.1",
+    "winston": "^3.3.3"
+  },
+  "apidoc": {
+    "name": "Api documentation",
+    "version": "0.1.0",
+    "description": "Generate beautiful api documentation",
+    "title": "API Documentation",
+    "url": "http://localhost:3000"
   }
 }

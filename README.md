@@ -1,7 +1,12 @@
-To start json-server: npm run start-server
+**To start json-server:**
 
-To run test: npm test
+- npm run start-server
+- To validate run GET http://localhost:3000/posts from postman
 
-Known issue:
+**To run test:** 
 
-path resolver is not working for pages
+npm test
+
+**Known issue:**
+
+Path resolver in _.babelrc_ is not working for _alias pages_.

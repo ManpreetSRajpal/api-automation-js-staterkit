@@ -1,38 +1,37 @@
-import supertest from "supertest";
-
-var commonHeaders = {
+const commonHeaders = {
     'authorization': 'TokenValueASDF',
     'Accept': 'application/json',
 };
 
-exports.GET = async ({endpoint, baseUrl = "http://localhost:3000/", headers}) => {
-
+exports.GET = async ({endpoint, headers}) => {
 
     headers = headers != undefined
         ? {...commonHeaders, ...headers}
         : commonHeaders;
 
     try {
-        let response = await supertest(baseUrl).get(endpoint)
+        const response = await baseUrl.get(endpoint)
             .set(headers);
+        logger.info("Get call Response " + JSON.stringify(response));
         return response;
     } catch (error) {
-        console.log('Error in GET request - ', error);
+        logger.error('Error in GET request - ', error);
     }
 };
 
-exports.POST = async ({endpoint, requestBody, baseUrl = "default url",headers}) => {
+exports.POST = async ({endpoint, requestBody, headers}) => {
 
     headers = headers != undefined
         ? {...commonHeaders, ...headers}
         : commonHeaders;
 
     try {
-        let response = await supertest(baseUrl).post(endpoint)
+        const response = await baseUrl.post(endpoint)
             .set(headers)
             .send(requestBody);
+        logger.info("Post call Response " + JSON.stringify(response));
         return response;
     } catch (error) {
-        console.log('Error in POST Request - ', error);
+        logger.error('Error in POST Request - ', error);
     }
 };

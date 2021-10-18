@@ -1,12 +1,11 @@
-import jp from "jsonpath";
+import jsonPath from "jsonpath";
 
 exports.getValue = (json, inp) => {
-
-    let result = jp.query(json, '$..' + inp);
+    const result = jsonPath.query(json, '$..' + inp);
     return result;
 }
 
 exports.setVal = (json, inp, val) => {
-    jp.value(json, '$..' + inp, val);
+    jsonPath.value(json, '$..' + inp, val);
     return json;
 }

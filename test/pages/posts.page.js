@@ -1,19 +1,18 @@
-const client = require("util/client");
-const endpoints = require("util/endpoints");
-import json from "../../util/jsonHelper";
+import client from "util/client";
+import endpoints from "./endpoints.js";
+import json from "util/jsonHelper";
 
-let baseUrl = endpoints.baseUrl;
-let postsUrl = endpoints.postsEndpoint;
-let commentsUrl = endpoints.commentsEndpoint;
+const postsUrl = endpoints.postsEndpoint;
+const commentsUrl = endpoints.commentsEndpoint;
 
 const PostsPage = {
     ...client,
 
     async getMePost(id) {
 
-        var moreHeaders = {'Content-Type': 'application/json'};
-        let res = await this.GET({
-            baseUrl: baseUrl,
+        logger.info(" Getting Posts");
+        const moreHeaders = {'Content-Type': 'application/json'};
+        const res = this.GET({
             endpoint: postsUrl,
             headers: moreHeaders
         });
@@ -22,9 +21,10 @@ const PostsPage = {
 
     async getMeComments() {
 
-        let beforeResp = await this.getMePost(1);
-        let id = json.getValue(beforeResp.body, 'id');
-        let res = await this.GET({
+        logger.info(" Getting comments ");
+        const beforeResp = await this.getMePost(1);
+        const id = json.getValue(beforeResp.body, 'id');
+        const res = this.GET({
             endpoint: commentsUrl + id
         });
         return res;
