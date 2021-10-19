@@ -1,10 +1,12 @@
+const env = process.env.ENV == undefined ? "local" : process.env.ENV;
+
 module.exports = {
   diff: true,
   extension: ["js"],
   package: "./package.json",
   reporter: "mochawesome",
   timeout: 5000,
-  require: ["@babel/register", "setup/local.js"],
+  require: ["@babel/register", "setup/" + env + ".js"],
   retries: 1,
   spec: ["test/spec/*.js"],
 };
