@@ -19,7 +19,7 @@
 - npx husky install
 - npx husky add .husky/pre-commit "npx --no-install lint-staged"
 
-Make sure node version >=12.13.0
+Make sure to have node version >=12.13.0
 
 **Known issue:**
 
