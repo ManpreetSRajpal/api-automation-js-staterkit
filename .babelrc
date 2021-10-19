@@ -12,7 +12,8 @@
         "extensions": [".js"],
         "alias": {
           "util": "./util",
-          "pages": "test/pages"
+          "pages": "test/pages",
+          "client": "./client"
         }
       }
     ]

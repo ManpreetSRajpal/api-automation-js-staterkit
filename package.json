@@ -4,7 +4,7 @@
   "description": "JS Api automation starter kit",
   "scripts": {
     "pretest": "rm -rf logs/*.log && rm -rf mochawesome-report/*",
-    "test": "mocha --config './.mocharc.js'",
+    "test": "mocha --config '.mocharc.js'",
     "start-server": "json-server --watch server/req.json",
     "prettier:check": "prettier --check '**/*.js'",
     "prettier:write": "prettier --write '**/*.js'",

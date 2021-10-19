@@ -1,10 +1,10 @@
-import PostsPage from '../pages/posts.page';
+import Posts_service from "../../service/posts/posts_service";
 
-describe('Demo api suite', function () {
-	describe('GET Request', function () {
-		it('Should Get Comments', async function () {
-			const res = await PostsPage.getMeComments();
-			res.status.should.equal(200);
-		});
-	});
+describe("Demo api suite", function () {
+  describe("GET Request", function () {
+    it("Should Get Comments", async function () {
+      const res = await Posts_service.getMeComments();
+      res.status.should.equal(200);
+    });
+  });
 });
