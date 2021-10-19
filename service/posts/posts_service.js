@@ -1,6 +1,6 @@
 import client from "client/http_client";
 import { postPageEndpoints } from "./endpoints.js";
-import json from "util/jsonParser";
+import json from "util/json_parser";
 
 const postsUrl = postPageEndpoints.postsEndpoint;
 const commentsUrl = postPageEndpoints.commentsEndpoint;
