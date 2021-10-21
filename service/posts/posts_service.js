@@ -9,7 +9,7 @@ const Posts_service = {
   async getMePost() {
     logger.info(" Getting Posts");
     const moreHeaders = { "Content-Type": "application/json" };
-    const res = GET({
+    const res = GET.withHeaders({
       endpoint: postsUrl,
       headers: moreHeaders,
     });
@@ -20,7 +20,7 @@ const Posts_service = {
     logger.info(" Getting comments ");
     const beforeResp = await this.getMePost(1);
     const id = json.getValue(beforeResp.body, "id");
-    const res = GET({
+    const res = GET.withHeaders({
       endpoint: commentsUrl + id,
     });
     return res;
