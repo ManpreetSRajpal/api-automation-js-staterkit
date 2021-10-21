@@ -3,7 +3,7 @@ const commonHeaders = {
   Accept: "application/json",
 };
 
-exports.GET = async ({ endpoint, headers }) => {
+const GET = async ({ endpoint, headers }) => {
   headers =
     headers != undefined ? { ...commonHeaders, ...headers } : commonHeaders;
 
@@ -16,7 +16,7 @@ exports.GET = async ({ endpoint, headers }) => {
   }
 };
 
-exports.POST = async ({ endpoint, requestBody, headers }) => {
+const POST = async ({ endpoint, requestBody, headers }) => {
   headers =
     headers != undefined ? { ...commonHeaders, ...headers } : commonHeaders;
 
@@ -31,3 +31,5 @@ exports.POST = async ({ endpoint, requestBody, headers }) => {
     logger.error("Error in POST Request - ", error);
   }
 };
+
+export { GET, POST };
